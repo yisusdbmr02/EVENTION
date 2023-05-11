@@ -13,7 +13,6 @@
       if(isset($_GET['msg'])){
         if($_GET['msg']==2){
         $idCat=$_SESSION['idCat'];
-        echo $idCat;
         $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and idCategoria='".$idCat."' order by fechaEntrega;";
         }
         else
@@ -38,6 +37,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="img/favicon.jpg">
 </head>
 
@@ -98,7 +98,7 @@
               </div>
               <div class="row text-light">
                 <div class="col">
-                  <p id="descripcion" class="text-center"><?=$tarea['descripcion']?></p>
+                  <h4 id="descripcion" class="text-center"><?=$tarea['descripcion']?></h4>
                 </div>
               </div>
               
@@ -121,8 +121,8 @@
     <footer class="fixed-bottom bg-info">
     <div class="row  py-3 mx-0">
       <div class="col">
-        <h4 class="text-center text-light">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
-          Jesús Díaz-Bernardo</h3>
+        <h4 id="futProy" class="text-center text-light">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
+          Jesus Diaz-Bernardo</h3>
       </div>
     </div>
     <div class="row text-light text-center">

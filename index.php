@@ -19,7 +19,7 @@
       <header class="sticky-top">
         <div class="row bg-info text-light  text-center">
           <div class="col p-2">
-            <h1>EVENTION</h1>
+            <h1 id="titProy">EVENTION</h1>
           </div>
         </div>
         <div class="row bg-info text-light text-center">

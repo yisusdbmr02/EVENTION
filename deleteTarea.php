@@ -7,7 +7,7 @@ try{
                 $user=$_GET['user'];
                 $deleteTarea = "delete from tarea where id='$idTarea' ";
                 $mysqli->query($deleteTarea);
-                header("Location: paginaPrincipal.php?user=$user&msg=1");
+                header("Location: paginaPrincipal.php?msg=1");
             
             desconectar($mysqli);
 }

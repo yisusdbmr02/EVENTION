@@ -1,3 +1,11 @@
 .h20{
     height: 20%;
 }
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src:url('../fonts/CoffeCake.otf') format('opentype'),
+       url('../fonts/CoffeCake.ttf') format('truetype');
+}
+#titProy,#futProy{
+    font-family: 'MiFuentePersonalizada', sans-serif;
+}
