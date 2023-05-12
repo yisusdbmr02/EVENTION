@@ -33,6 +33,13 @@
               $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and idCategoria='".$idCat."' order by fechaEntrega;";
            }else
             $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
+          if($idCat=='0'){
+            if($est=='T')
+            $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
+            else
+            $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' order by fechaEntrega;";
+          }else
+          $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
         }
       }
       else{
@@ -60,7 +67,7 @@
 
 <body class="">
   <div class="container rounded shadow p-0">
-    <nav class="navbar shadow rounded-top sticky-top navbar-expand-lg navbar-light bg-success">
+    <nav class="navbar shadow rounded-top sticky-top navbar-expand-lg navbar-light bg-info">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -163,7 +170,7 @@
   <div class="modal fade" id="modalInsertarModificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header bg-success">
+        <div class="modal-header bg-info">
           <h5 class="modal-title text-white" id="title"></h5>
           <button type="button" class="close text-light ocultarModal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -333,7 +340,7 @@
       })
       $('.card').filter('[data-value="E"]').addClass('bg-success');
       $('.card').filter('[data-value="P"]').addClass('bg-orange');
-      $('.card').filter('[data-value="ST"]').addClass('bg-purple');
+      $('.card').filter('[data-value="ST"]').addClass('bg-danger');
      
       $('#selectCategorias').on('change',function(){
         var optionSelected= $('#selectCategorias').val();
