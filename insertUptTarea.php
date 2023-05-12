@@ -21,13 +21,13 @@
                 if($idTarea == '0'){
                     $insertTarea = "Insert into tarea (descripcion,estado,fechaEntrega,idUsuario,IdCategoria)values('$descrip','$estado','$fechaEntrega','$user',".$cat['id'].");";
                     $mysqli->query($insertTarea);
-                    header("Location: paginaPrincipal.php?user=$user&msg=1");
+                    header("Location: paginaPrincipal.php?msg=1");
                 }
                 else{
                     $updateTarea = "Update tarea set descripcion='$descrip',estado='$estado',fechaEntrega='$fechaEntrega',idUsuario='$user',idCategoria='".$cat['id']."' where id='$idTarea';";
                     echo $updateTarea;
                     $mysqli->query($updateTarea);
-                    header("Location: paginaPrincipal.php?user=$user&msg=1");
+                    header("Location: paginaPrincipal.php?msg=1");
                 }
              }
              desconectar($mysqli);

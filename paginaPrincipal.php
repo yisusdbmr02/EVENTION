@@ -8,7 +8,7 @@
       $mysqli = conectar($dbname);
       session_start();
       $idUser=$_SESSION['id'];
-      $idCat="";
+      $idCat="0";
       $est="T";
       $selectcategorias="Select id, nombre from categoria;";
       if(isset($_GET['msg'])){
@@ -17,7 +17,10 @@
         $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and idCategoria='".$idCat."' order by fechaEntrega;";
         }elseif($_GET['msg']==3){
           $est=$_SESSION['est'];
-          $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' order by fechaEntrega;";
+          //if($_SESSION['idCat']=='0')
+            $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' order by fechaEntrega;";
+          //else
+          //$selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' and idCategoria='".$_SESSION['idCat']."' order by fechaEntrega;";
         }else
         $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
       }
@@ -72,7 +75,7 @@
                 for="entregadas">Entregadas</label>
               <input class="ml-3" id="porHacer" value="ST" <?php if($est == "ST") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="porHacer">Por
                 Hacer</label>
-              <input class="ml-3" id="enProceso" value="P" <?php if($est == "P") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="enProceso">En
+              <input class="ml-3" id="enProceso" value="P" <?php if($est== "P") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="enProceso">En
                 Proceso</label>
             </form>
           </li>
@@ -185,7 +188,7 @@
             <div class="row">
               <div class="col">
                 <input class="ml-3" id="modalEntregadas" value="E" name="modalRealizacionTarea" type="radio" checked><label
-                  for="entregadas">Entregadas</label>
+                  for="modalEntregadas">Entregadas</label>
               </div>
             </div>
             <div class="row">
