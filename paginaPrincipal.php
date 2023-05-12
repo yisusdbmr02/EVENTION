@@ -42,7 +42,7 @@
   <link rel="shortcut icon" href="img/favicon.jpg">
 </head>
 
-<body>
+<body class="">
   <div class="container rounded shadow p-0">
     <nav class="navbar shadow rounded-top sticky-top navbar-expand-lg navbar-light bg-success">
 
@@ -64,7 +64,9 @@
             </form>      
           </li>
           <li class="nav-item mt-2 text-light">
-            <input class="ml-3" id="entregadas" value="E" checked name="realizacionTarea" type="radio"><label
+            <input class="ml-3" id="todas" value="T" checked name="realizacionTarea" type="radio"><label
+              for="todas">Todas</label>
+            <input class="ml-3" id="entregadas" value="E" name="realizacionTarea" type="radio"><label
               for="entregadas">Entregadas</label>
             <input class="ml-3" id="porHacer" value="ST" name="realizacionTarea" type="radio"><label for="porHacer">Por
               Hacer</label>
@@ -119,14 +121,14 @@
         </div>
       <?php }?>
     </div>
-    <footer class="fixed-bottom bg-info">
+    <footer class="fixed-bottom ">
     <div class="row  py-3 mx-0">
       <div class="col">
-        <h4 id="footProj" class="text-center text-light">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
-          Jesus Diaz-Bernardo</h3>
+        <h4 id="footProj" class="text-center text-dark">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
+          Jesus Diaz-Bernardo</h4>
       </div>
     </div>
-    <div class="row text-light text-center">
+    <div class="row  text-center">
           <div class="col  p-2">
             <h3 class="text-center text-light">
               <a href="" class="btn"><i class="fab fa-facebook"></i></a>
@@ -314,8 +316,8 @@
         $("#modalInsertarModificar").modal("hide");
       })
       $('.card').filter('[data-value="E"]').addClass('bg-success');
-      $('.card').filter('[data-value="P"]').addClass('bg-warning');
-      $('.card').filter('[data-value="ST"]').addClass('bg-danger');
+      $('.card').filter('[data-value="P"]').addClass('bg-orange');
+      $('.card').filter('[data-value="ST"]').addClass('bg-purple');
      
       $('#selectCategorias').on('change',function(){
         var optionSelected= $('#selectCategorias').val();

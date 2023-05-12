@@ -15,16 +15,21 @@
 </head>
 <body>
   <section class="vh-100">
-    <div class="container-fluid h-100 bg-success">
-      <header class="sticky-top">
-        <div class="row bg-info text-light  text-center">
-          <div class="col p-2">
-            <h1 id="hedProj">EVENTION</h1>
+    <div class="container-fluid h-100">
+      
+        
+      <div class="row pt-5 d-flex justify-content-center align-items-center ">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+        </div>
+        <div class="col-4">
+        <div class="row text-dark text-center">
+          <div class="col pt-4">
+            <h1 id="hedProj">EVENTION <img class="img-fluid pb-4" style="width: 100px;" src="img/imgPaginaLogin.png" alt=""></h1>
           </div>
         </div>
-        <div class="row bg-info text-light text-center">
-          <div class="col  p-2">
-            <h3 class="text-center text-light">
+        <div class="row text-light text-center">
+          <div class="col pb-3">
+            <h3 class="text-light">
               <a href="" class="btn"><i class="fab fa-facebook"></i></a>
               <a href="" class="btn"><i class="fab fa-instagram"></i></a>
               <a href="" class="btn"><i class="fab fa-twitter"></i></a>
@@ -35,12 +40,6 @@
             </h3>
           </div>
         </div>
-      </header>
-      <div class="row d-flex justify-content-center  align-items-center ">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="img/imgPaginaLogin.png" class="img-fluid" alt="Sample image">
-        </div>
-        <div class="col-4">
           <div class="card shadow">
             <div class="card-header">
               <h2 class="text-muted text-center">Inicio de Sesión</h2>
