@@ -16,8 +16,6 @@
 <body>
   <section class="vh-100">
     <div class="container-fluid h-100">
-      
-        
       <div class="row pt-5 d-flex justify-content-center align-items-center ">
         <div class="col-md-9 col-lg-6 col-xl-5">
         </div>

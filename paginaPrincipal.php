@@ -8,15 +8,17 @@
       $mysqli = conectar($dbname);
       session_start();
       $idUser=$_SESSION['id'];
-      
+      $idCat="";
+      $est="T";
       $selectcategorias="Select id, nombre from categoria;";
       if(isset($_GET['msg'])){
         if($_GET['msg']==2){
         $idCat=$_SESSION['idCat'];
-        echo $idCat;
         $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and idCategoria='".$idCat."' order by fechaEntrega;";
-        }
-        else
+        }elseif($_GET['msg']==3){
+          $est=$_SESSION['est'];
+          $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' order by fechaEntrega;";
+        }else
         $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
       }
       else{
@@ -55,23 +57,24 @@
           <li class="nav-item">
             <form method="post" id="formCategoria" action="">
               <select class="custom-select" id="selectCategorias">
-                <option value="" selected>Elija una Categoría</option>
-                <option value="0">Todas</option>
+                <option value="0" <?php if($idCat == "0") echo "selected"; ?>>Todas las categorías</option>
                 <?php foreach($categorias as $categoria){ ?>
-                <option value="<?=$categoria['id']?>"><?=$categoria['nombre']?></option>
+                <option value="<?=$categoria['id']?>" <?php if($idCat == $categoria['id']) echo "selected"; ?> ><?=$categoria['nombre']?></option>
                 <?php } ?>
               </select>
             </form>      
           </li>
           <li class="nav-item mt-2 text-light">
-            <input class="ml-3" id="todas" value="T" checked name="realizacionTarea" type="radio"><label
-              for="todas">Todas</label>
-            <input class="ml-3" id="entregadas" value="E" name="realizacionTarea" type="radio"><label
-              for="entregadas">Entregadas</label>
-            <input class="ml-3" id="porHacer" value="ST" name="realizacionTarea" type="radio"><label for="porHacer">Por
-              Hacer</label>
-            <input class="ml-3" id="enProceso" value="P" name="realizacionTarea" type="radio"><label for="enProceso">En
-              Proceso</label>
+            <form id="formEstado" method="post" action="">
+              <input class="ml-3" id="todas" value="T" <?php if($est == "T") echo "checked"; ?> name="realizacionTarea" type="radio"><label
+                for="todas">Todas</label>
+              <input class="ml-3" id="entregadas" value="E" <?php if($est == "E") echo "checked"; ?> name="realizacionTarea" type="radio"><label
+                for="entregadas">Entregadas</label>
+              <input class="ml-3" id="porHacer" value="ST" <?php if($est == "ST") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="porHacer">Por
+                Hacer</label>
+              <input class="ml-3" id="enProceso" value="P" <?php if($est == "P") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="enProceso">En
+                Proceso</label>
+            </form>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ">
@@ -323,6 +326,20 @@
         var optionSelected= $('#selectCategorias').val();
         $('#formCategoria').attr('action','compruebaCat.php?id='+optionSelected);
         $('#formCategoria').submit();
+      })
+      $("[name='realizacionTarea']").on('change',function(){
+        var val= ''
+        if ($('#todas').prop('checked')) 
+          val=$('#todas').val();
+        else if ($('#entregadas').prop('checked')) 
+          val=$('#entregadas').val();
+        else if ($('#porHacer').prop('checked')) 
+          val=$('#porHacer').val();
+        else
+        val=$('#enProceso').val();
+
+        $('#formEstado').attr('action','compruebaEst.php?id='+val);
+        $('#formEstado').submit();
       })
   </script>
 </body>
