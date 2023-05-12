@@ -144,7 +144,7 @@
         </div>
       <?php }?>
     </div>
-    <footer class="fixed-bottom ">
+    <footer class="sticky-bottom">
     <div class="row  py-3 mx-0">
       <div class="col">
         <h4 id="footProj" class="text-right text-dark">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
@@ -160,7 +160,7 @@
               <a href="" class="btn"><i class="fab fa-reddit"></i></a>
               <a href="" class="btn"><i class="fab fa-mastodon" a></i></a>
               <a href="" class="btn"><i class="fab fa-discord"></i></a>
-              <a href="" class="btn"><i class="fab fa-github"></i></a>
+              <a href="https://github.com/yisusdbmr02" target="_blank" class="btn"><i class="fab fa-github"></i></a>
             </h3>
           </div>
         </div>
@@ -226,8 +226,8 @@
          
         </div>
         <div class="text-center d-flex justify-content-between modal-footer">
-          <button type="button" class="btn btn-secondary ocultarModal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp; Cancelar</button>
-          <button id="btnInsertUpt" type="button" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Guardar</button>
+          <button type="button" class="btn btn-outline-dark ocultarModal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp; Cancelar</button>
+          <button id="btnInsertUpt" type="button" class="btn btn-info"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Guardar</button>
         </div>
         </form>  
       </div>
@@ -241,127 +241,15 @@
         }
     ?>
   <!--FIN MODAL INSERTAR MODIFICAR--> 
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
-      integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
-      crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script>
-      function operacion(op,id,cat, fechEntrega, desc, estado ){
-        if(op==="anadir"){
-          $("#modalInsertarModificar").modal("show");
-          $('#modalInsertarModificar').on('shown.bs.modal', function () {
-            $('#modalCategoria').focus();
-            $('#title').text("Añadir");
-            $('#idTarea').val(0);
-          });
-          
-        }else if(op==="modificar"){
-          $("#modalInsertarModificar").modal("show");
-          $('#modalInsertarModificar').on('shown.bs.modal', function () {
-            $('#modalCategoria').focus();
-            $('#title').text("Modificar");
-            $('#idTarea').val(id);
-            $('#modalCategoria').val(cat);
-            $('#modalFechaEntrega').val(fechEntrega);
-            $('#modalDescrip').val(desc);
-            if(estado=="E")
-              $("#modalEntregadas").prop("checked",true);
-            else if(estado=="P")
-              $("#modalEnProceso").prop("checked",true);
-            else
-            $("#modalPorHacer").prop("checked",true);
-          });
-        }
-      }
-      $('#btnInsertUpt').on('click', function(){
-        Swal.fire({
-                text: "¿Quieres guardar los cambios?",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Si, Guardalos!'
-            }).then((result) => {
-              $("#formInsertUpt").submit();
-            })
-      });
-      function deleteTarea(idTarea, idUser) {
-            Swal.fire({
-                title: '¿Estas seguro?',
-                text: "Los cambios serán irreversibles",
-                icon: 'error',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Si, Eliminalos!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = 'deleteTarea.php?id='+idTarea+'&user='+idUser;
-
-                }
-            })
-        }
-      // Función para verificar si el parámetro de consulta "mensaje" está presente
-      function mostrarMensaje() {
-            const mensaje = $.urlParam('msg');
-            if (mensaje === '1') {
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Cambios Guardados',
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-            }
-        }
-
-        // Agrega la función $.urlParam a jQuery para obtener el valor de un parámetro de consulta
-        $.urlParam = function (name) {
-            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-            if (!results) {
-                return null;
-            }
-            return decodeURIComponent(results[1]) || 0;
-        }
-
-        // Ejecuta la función cuando la página se carga
-        $(document).ready(mostrarMensaje);
-      $('.ocultarModal').click(function(){
-        $("#modalInsertarModificar").modal("hide");
-      })
-      $('.card').filter('[data-value="E"]').addClass('bg-success');
-      $('.card').filter('[data-value="P"]').addClass('bg-orange');
-      $('.card').filter('[data-value="ST"]').addClass('bg-danger');
-     
-      $('#selectCategorias').on('change',function(){
-        var optionSelected= $('#selectCategorias').val();
-        $('#formCategoria').attr('action','compruebaCat.php?id='+optionSelected);
-        $('#formCategoria').submit();
-      })
-      $("[name='realizacionTarea']").on('change',function(){
-        var val= ''
-        if ($('#todas').prop('checked')) 
-          val=$('#todas').val();
-        else if ($('#entregadas').prop('checked')) 
-          val=$('#entregadas').val();
-        else if ($('#porHacer').prop('checked')) 
-          val=$('#porHacer').val();
-        else
-        val=$('#enProceso').val();
-
-        $('#formEstado').attr('action','compruebaEst.php?id='+val);
-        $('#formEstado').submit();
-      })
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="js/myjs.js"></script>
+  <script src="js/swal_fires.js"></script>
 </body>
-
 </html>
