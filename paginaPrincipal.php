@@ -132,7 +132,6 @@
                         aria-hidden="true"></i>&nbsp; Borrar Tarea</a>
                   </div>
                 </div>
-              
             </div>
           </div>
         </div>
