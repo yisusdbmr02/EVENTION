@@ -106,7 +106,7 @@
         $cat=$resulCat->fetch_assoc(); 
         ?>
         <div class="col-lg-5 col-md-12 my-3 d-flex mx-2">
-          <div class="card shadow flex-fill" data-value="<?=$tarea['estado']?>">
+          <div class="card  flex-fill" data-value="<?=$tarea['estado']?>">
             <div class="card-body">
               <div class="row justify-content-between text-light">
                 <div class="col-auto">
@@ -141,13 +141,13 @@
     <footer class="fixed-bottom ">
     <div class="row  py-3 mx-0">
       <div class="col">
-        <h4 id="footProj" class="text-center text-dark">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
+        <h4 id="footProj" class="text-right text-dark">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
           Jesus Diaz-Bernardo</h4>
       </div>
     </div>
     <div class="row  text-center">
           <div class="col  p-2">
-            <h3 class="text-center text-light">
+            <h3 class="text-right text-light">
               <a href="" class="btn"><i class="fab fa-facebook"></i></a>
               <a href="" class="btn"><i class="fab fa-instagram"></i></a>
               <a href="" class="btn"><i class="fab fa-twitter"></i></a>
