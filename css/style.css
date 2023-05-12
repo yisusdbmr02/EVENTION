@@ -1,3 +1,13 @@
 .h20{
     height: 20%;
 }
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src: url('../fonts/Cakecafe.ttf') format('truetype'),
+         url('../fonts/Cakecafe.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+#hedProj,#footProj{
+font-family: 'MiFuentePersonalizada', sans-serif;
+}

@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.jpg">
 </head>
 
@@ -121,8 +122,8 @@
     <footer class="fixed-bottom bg-info">
     <div class="row  py-3 mx-0">
       <div class="col">
-        <h4 class="text-center text-light">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
-          Jesús Díaz-Bernardo</h3>
+        <h4 id="footProj" class="text-center text-light">EVENTION &nbsp; <i class="fas fa-copyright aria-hidden=" true"></i>&nbsp;
+          Jesus Diaz-Bernardo</h3>
       </div>
     </div>
     <div class="row text-light text-center">
@@ -214,7 +215,6 @@
             $e->getMessage();
         }
     ?>
-  ?>
   <!--FIN MODAL INSERTAR MODIFICAR--> 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
