@@ -3,7 +3,7 @@
     if(isset($_GET['id'])){
         if($_GET['id']==0){
             $_SESSION['idCat']='0';
-            header("Location: paginaPrincipal.php");
+            header("Location: paginaPrincipal.php?msg");
         }
         else{
         $_SESSION['idCat']=$_GET['id'];

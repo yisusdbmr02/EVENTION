@@ -14,6 +14,8 @@ try{
                     session_start();
                     $_SESSION['usuario']=$int['login'];
                     $_SESSION['id']=$int['id'];
+                    $_SESSION['idCat']='0';
+                    $_SESSION['est']='T';
                     header('Location: paginaPrincipal.php');
                 } else {
                     $msg='El usuario o contraseña no es válido.';

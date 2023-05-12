@@ -8,21 +8,32 @@
       $mysqli = conectar($dbname);
       session_start();
       $idUser=$_SESSION['id'];
-      $idCat="0";
-      $est="T";
+      $idCat=$_SESSION['idCat'];
+      $est=$_SESSION['est'];
       $selectcategorias="Select id, nombre from categoria;";
       if(isset($_GET['msg'])){
         if($_GET['msg']==2){
         $idCat=$_SESSION['idCat'];
-        $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and idCategoria='".$idCat."' order by fechaEntrega;";
+        if($est=='T')
+          $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and idCategoria='".$idCat."' order by fechaEntrega;";
+        else
+          $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' and idCategoria='".$idCat."' order by fechaEntrega;";
         }elseif($_GET['msg']==3){
           $est=$_SESSION['est'];
-          //if($_SESSION['idCat']=='0')
+          if($idCat=='0')
             $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' order by fechaEntrega;";
-          //else
-          //$selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' and idCategoria='".$_SESSION['idCat']."' order by fechaEntrega;";
-        }else
-        $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
+          else{
+            $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and estado='".$est."' and idCategoria='".$idCat."' order by fechaEntrega;";
+          }
+        }else{
+          if($est=='T'){
+            if($idCat=='0')
+              $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
+            else
+              $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and idCategoria='".$idCat."' order by fechaEntrega;";
+           }else
+            $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
+        }
       }
       else{
         $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
