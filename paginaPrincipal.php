@@ -88,12 +88,12 @@
           <li class="nav-item mt-2 text-light">
             <form id="formEstado" method="post" action="">
               <input class="ml-3" id="todas" value="T" <?php if($est == "T") echo "checked"; ?> name="realizacionTarea" type="radio"><label
-                for="todas">Todas</label>
+                for="todas">&nbsp;Todas</label>
               <input class="ml-3" id="entregadas" value="E" <?php if($est == "E") echo "checked"; ?> name="realizacionTarea" type="radio"><label
-                for="entregadas">Entregadas</label>
-              <input class="ml-3" id="porHacer" value="ST" <?php if($est == "ST") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="porHacer">Por
+                for="entregadas">&nbsp;Entregadas</label>
+              <input class="ml-3" id="porHacer" value="ST" <?php if($est == "ST") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="porHacer">&nbsp;Por
                 Hacer</label>
-              <input class="ml-3" id="enProceso" value="P" <?php if($est== "P") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="enProceso">En
+              <input class="ml-3" id="enProceso" value="P" <?php if($est== "P") echo "checked"; ?> name="realizacionTarea" type="radio"><label for="enProceso">&nbsp;En
                 Proceso</label>
             </form>
           </li>
