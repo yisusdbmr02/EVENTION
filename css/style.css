@@ -39,11 +39,4 @@ font-family: 'MiFuentePersonalizada', sans-serif;
 .card:hover{
     box-shadow: 6px 6px 8px rgb(94, 77, 77);
 }
-@font-face {
-    font-family: 'MiFuentePersonalizada';
-    src:url('../fonts/CoffeCake.otf') format('opentype'),
-       url('../fonts/CoffeCake.ttf') format('truetype');
-}
-#titProy,#futProy{
-    font-family: 'MiFuentePersonalizada', sans-serif;
-}
+
