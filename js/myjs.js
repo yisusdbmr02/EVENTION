@@ -36,10 +36,15 @@ function operacion(op,id,cat, fechEntrega, desc, estado ){
 function deleteTarea(idTarea, idUser) {
     swalDelete(idTarea,idUser);
 }
+function cerrarSession() {
+  swalDeleteSession();
+}
 
 $('#btnInsertUpt').on('click', function(){
     swalInsUpt();
 });
+
+
 
   // Función para verificar si el parámetro de consulta "mensaje" está presente
 function mostrarMensaje() {

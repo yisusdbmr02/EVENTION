@@ -28,12 +28,11 @@
         <div class="row text-light text-center">
           <div class="col pb-3">
             <h3 class="text-light">
-              <a href="" class="btn"><i class="fab fa-facebook"></i></a>
-              <a href="" class="btn"><i class="fab fa-instagram"></i></a>
-              <a href="" class="btn"><i class="fab fa-twitter"></i></a>
-              <a href="" class="btn"><i class="fab fa-reddit"></i></a>
-              <a href="" class="btn"><i class="fab fa-mastodon" a></i></a>
-              <a href="" class="btn"><i class="fab fa-discord"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100091753552672" target="_blank" class="btn"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/yisus_db02/" target="_blank" class="btn"><i class="fab fa-instagram"></i></a>
+              <a href="https://twitter.com/jesusredrojo" target="_blank" class="btn"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/in/jesus-d%C3%ADaz-bernardo-4b3390244/" target="_blank" class="btn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://mastodon.social/@yisus_dbmr02" target="_blank" class="btn"><i class="fab fa-mastodon"></i></a>
               <a href="https://github.com/yisusdbmr02" target="_blank" class="btn"><i class="fab fa-github"></i></a>
             </h3>
           </div>

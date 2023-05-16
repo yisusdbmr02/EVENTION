@@ -31,9 +31,7 @@
               $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
             else
               $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' and idCategoria='".$idCat."' order by fechaEntrega;";
-           }else
-            $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
-          if($idCat=='0'){
+           }elseif($idCat=='0'){
             if($est=='T')
             $selectTareasById="Select id,descripcion,estado,fechaEntrega,idCategoria from tarea where idUsuario='".$idUser."' order by fechaEntrega;";
             else
@@ -102,7 +100,7 @@
           <a href="javascript:operacion('anadir')" class="btn btn-outline-light my-2 "
              type="button"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;
             Añadir Tarea</a>
-          <a href="deleteSession.php" class="btn btn-outline-light my-2 ml-3" type="button"><i class="fas fa-sign-out-alt"></i>&nbsp; Cerrar Sesión</a>
+          <a href="javascript:cerrarSession()" class="btn btn-outline-light my-2 ml-3" type="button"><i class="fas fa-sign-out-alt"></i>&nbsp; Cerrar Sesión</a>
         </form>
       </div>
     </nav>
@@ -154,12 +152,11 @@
     <div class="row  text-center">
           <div class="col  p-2">
             <h3 class="text-right text-light">
-              <a href="" class="btn"><i class="fab fa-facebook"></i></a>
-              <a href="" class="btn"><i class="fab fa-instagram"></i></a>
-              <a href="" class="btn"><i class="fab fa-twitter"></i></a>
-              <a href="" class="btn"><i class="fab fa-reddit"></i></a>
-              <a href="" class="btn"><i class="fab fa-mastodon" a></i></a>
-              <a href="" class="btn"><i class="fab fa-discord"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100091753552672" target="_blank" class="btn"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/yisus_db02/" target="_blank" class="btn"><i class="fab fa-instagram"></i></a>
+              <a href="https://twitter.com/jesusredrojo" target="_blank" class="btn"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/in/jesus-d%C3%ADaz-bernardo-4b3390244/" target="_blank" class="btn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://mastodon.social/@yisus_dbmr02" target="_blank" class="btn"><i class="fab fa-mastodon"></i></a>
               <a href="https://github.com/yisusdbmr02" target="_blank" class="btn"><i class="fab fa-github"></i></a>
             </h3>
           </div>

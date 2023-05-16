@@ -35,3 +35,17 @@ function swalSuccess(){
         timer: 1000
     })
 }
+function swalDeleteSession(){
+    Swal.fire({
+        title: '¿Seguro que quieres cerrar sesión?',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Si, Cierra Sesión!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = 'deleteSession.php';
+        }
+    })
+}
