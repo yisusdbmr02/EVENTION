@@ -15,32 +15,29 @@
 </head>
 <body>
   <section class="vh-100">
-    <div class="container-fluid h-100 bg-success">
-      <header class="sticky-top">
-        <div class="row bg-info text-light  text-center">
-          <div class="col p-2">
-            <h1 id="titProy">EVENTION</h1>
+    <div class="container-fluid h-100">
+      <div class="row pt-5 d-flex justify-content-center align-items-center ">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+        </div>
+        <div class="col-4">
+        <div class="row text-dark text-center">
+          <div class="col pt-4">
+            <h1 id="hedProj">EVENTION <img class="img-fluid pb-4" style="width: 100px;" src="img/imgPaginaLogin.png" alt=""></h1>
           </div>
         </div>
-        <div class="row bg-info text-light text-center">
-          <div class="col  p-2">
-            <h3 class="text-center text-light">
+        <div class="row text-light text-center">
+          <div class="col pb-3">
+            <h3 class="text-light">
               <a href="" class="btn"><i class="fab fa-facebook"></i></a>
               <a href="" class="btn"><i class="fab fa-instagram"></i></a>
               <a href="" class="btn"><i class="fab fa-twitter"></i></a>
               <a href="" class="btn"><i class="fab fa-reddit"></i></a>
               <a href="" class="btn"><i class="fab fa-mastodon" a></i></a>
               <a href="" class="btn"><i class="fab fa-discord"></i></a>
-              <a href="" class="btn"><i class="fab fa-github"></i></a>
+              <a href="https://github.com/yisusdbmr02" target="_blank" class="btn"><i class="fab fa-github"></i></a>
             </h3>
           </div>
         </div>
-      </header>
-      <div class="row d-flex justify-content-center  align-items-center ">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="img/imgPaginaLogin.png" class="img-fluid" alt="Sample image">
-        </div>
-        <div class="col-4">
           <div class="card shadow">
             <div class="card-header">
               <h2 class="text-muted text-center">Inicio de Sesión</h2>
@@ -86,7 +83,7 @@
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header bg-success">
+          <div class="modal-header bg-info">
             <h5 class="modal-title text-white" id="exampleModalLabel">Registro</h5>
             <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -175,9 +172,9 @@
               </fieldset>
             </div>
             <div class="text-center d-flex justify-content-between modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"
+              <button type="button" class="btn btn-outline-dark" data-dismiss="modal"><i class="fa fa-times"
                   aria-hidden="true"></i>&nbsp; Cancelar</button>
-              <button type="submit" class="btn btn-primary"><i class="fa fa-check"
+              <button type="submit" class="btn btn-info"><i class="fa fa-check"
                   aria-hidden="true"></i>&nbsp;Aceptar</button>
             </div>
           </form>
@@ -187,24 +184,11 @@
 <!--FIN MODAL REGISTRAR-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
-      integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <script>
-      $('#modalRegister').on('shown.bs.modal', function () {
-        $('#modalNombre').focus();
-      });
-      $('#loginPass').focus();
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"crossorigin="anonymous"></script>
+    <script src="js/myjs.js"></script>
 </body>
 
 </html>
